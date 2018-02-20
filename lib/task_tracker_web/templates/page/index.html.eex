@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-12" id="login-form">
+
+      <h3 id="banner">LOGIN</h3>
+        <div>
+          Email
+          <input type="email" name="email">
+        </div>
+        	<a href="/users/new" class="btn btn-primary label">
+            register
+        	</a>
+      <%= form_tag("/login", method: :post) do %>
+        <div>
+          <button>login</button>
+        </div>
+      <% end %>
+    </div>
+</div>		

@@ -1,8 +1,8 @@
 #!/bin/bash
-
+# Borrowed from Memory Game's deployment file
 export PORT=5104
 export MIX_ENV=prod
-export GIT_PATH=/home/memory/src/memory 
+export GIT_PATH=/home/tasks/src/tasks 
 
 PWD=`pwd`
 if [ $PWD != $GIT_PATH ]; then
@@ -27,14 +27,14 @@ mkdir -p ~/www
 mkdir -p ~/old
 
 NOW=`date +%s`
-if [ -d ~/www/memory ]; then
-	echo mv ~/www/memory ~/old/$NOW
-	mv ~/www/memory ~/old/$NOW
+if [ -d ~/www/tasks ]; then
+	echo mv ~/www/tasks ~/old/$NOW
+	mv ~/www/tasks ~/old/$NOW
 fi
 
-mkdir -p ~/www/memory
-REL_TAR=~/src/memory/_build/prod/rel/memory/releases/0.0.1/memory.tar.gz
-(cd ~/www/memory && tar xzvf $REL_TAR)
+mkdir -p ~/www/tasks
+REL_TAR=~/src/tasks/_build/prod/rel/task_tracker/releases/0.0.1/task_tracker.tar.gz
+(cd ~/www/tasks && tar xzvf $REL_TAR)
 
 crontab - <<CRONTAB
 @reboot bash /home/tasks/src/tasks/start.sh

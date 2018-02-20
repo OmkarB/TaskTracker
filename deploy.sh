@@ -1,6 +1,6 @@
 #!/bin/bash
 # Borrowed from Memory Game's deployment file
-export PORT=5104
+export PORT=5102
 export MIX_ENV=prod
 export GIT_PATH=/home/tasks/src/tasks 
 

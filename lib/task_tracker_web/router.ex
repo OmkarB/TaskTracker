@@ -29,6 +29,7 @@ defmodule TaskTrackerWeb.Router do
 
     resources "/users", UserController
     resources "/tasks", TaskController
+    resources "/managers", ManagerController
     post "/login", LoginController, :create
     delete "/login", LoginController, :delete
   end

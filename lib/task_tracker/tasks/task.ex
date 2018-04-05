@@ -20,4 +20,5 @@ defmodule TaskTracker.Tasks.Task do
     |> cast(attrs, [:subject, :body, :assignee, :time_worked, :completed])
     |> validate_required([:subject, :body, :assignee, :time_worked, :completed])
   end
+
 end
